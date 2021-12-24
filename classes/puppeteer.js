@@ -27,7 +27,7 @@ class youtube {
 
     async initBrowserHide() {
         if (!this.browser) {
-            this.browser = await puppeteer.launch({args: ['--no-sandbox'], headless: false});
+            this.browser = await puppeteer.launch({args: ['--no-sandbox'], headless: true});
         }
 
         this.page = await this.browser.newPage();
@@ -90,7 +90,6 @@ class youtube {
     }
 
     async getValueInputTag(inputName){
-        console.log(inputName);
         const element = await this.page.$(inputName);
         const text = await this.page.evaluate(element => element.textContent, element);
         return text;
@@ -98,12 +97,13 @@ class youtube {
 
     async getNameFacebook(id, token){
         let url = "https://graph.facebook.com/" + id + "?access_token=" + token;
-        let datajson = await getJSON(url, function(error, data){
-            return data;
+        return await getJSON(url)
+        .then(function (data) { 
+            return data.name;
         })
-
-        
-        return datajson.name;
+        .catch(function(error){
+            return id;
+        })
     }
 
     async clickItem(item){
