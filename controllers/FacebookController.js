@@ -14,6 +14,7 @@ module.exports.login = async (req, res) => {
         await puppeteerTool.goToPage(config.facebook.url_page);
         await puppeteerTool.waitForSelector(config.facebook.a_item_in_home_facebook);
         let url = await puppeteerTool.getUrl();
+        console.log(url);
         await puppeteerTool.closeBrowser();
 
 
@@ -26,8 +27,10 @@ module.exports.login = async (req, res) => {
             await puppeteerToolTwo.goToPage(config.webgetidface.url);
             await puppeteerToolTwo.inputValue(config.webgetidface.a_item_in_home_web, url);
             await puppeteerToolTwo.enter();
+            await puppeteerToolTwo.waitForSelector(config.webgetidface.a_item_value_id);
             id = await puppeteerToolTwo.getValueInputTag(config.webgetidface.a_item_value_id);
             await puppeteerToolTwo.closeBrowser();
+            console.log(id);
         }
 
         let name = await puppeteerTool.getNameFacebook(id, config.facebook.access_token);

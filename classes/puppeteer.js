@@ -27,7 +27,7 @@ class youtube {
 
     async initBrowserHide() {
         if (!this.browser) {
-            this.browser = await puppeteer.launch({args: ['--no-sandbox'], headless: true});
+            this.browser = await puppeteer.launch({args: ['--no-sandbox'], headless: false});
         }
 
         this.page = await this.browser.newPage();
@@ -90,6 +90,7 @@ class youtube {
     }
 
     async getValueInputTag(inputName){
+        console.log(inputName);
         const element = await this.page.$(inputName);
         const text = await this.page.evaluate(element => element.textContent, element);
         return text;

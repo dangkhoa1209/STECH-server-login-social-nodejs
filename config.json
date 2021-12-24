@@ -17,15 +17,13 @@
         "url_login": "https://www.facebook.com/",
         "url_page": "https://www.facebook.com/me/",
         "a_item_in_home_facebook": "input[type='search']",
-        "access_token": "EAABwzLixnjYBAPRHOvXKBtkubYo4cc13DBrB6th8o0taE9tH74lE6UNk0roOcta55kfpTCHJVl9MCWvHsVLZCO5lIrJGjCpmiSZC6YVXYanjanVWw7ZAx3YCjHEykr8eOoKcuG12M1qWPfR3qj18u5rYT8MABumiGhPIZA0fWSA0Mz4OQK12Tb1meOXNWWwZD"
+        "access_token": "EAABwzLixnjYBALNWN7t7lI1WY9yB3q2mLluRRrv1ZBLjehxlqHqV27ZArq44yNb7VW8MrOLAL9ZACRpvrmCpUXKSiHR1p00ZCCIop6ji1lgVrvZCVLNtNofbLLbdyLTtpXS9eJ1VwwCcqOLRhiUhuL4dxFEHkA3OKyZAt3i2Tw6HZAPMbDYSS1I4cdZCgq8H2X0ZD"
     },
 
     "webgetidface":{
         "url":"https://id.atpsoftware.vn",
         "a_item_in_home_web": "input[name='linkCheckUid']",
         "a_item_value_id": "textarea.mt-4"
-      
-
     },
 
     "twitter":{
